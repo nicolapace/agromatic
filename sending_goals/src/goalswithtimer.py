@@ -47,6 +47,9 @@ def talker():
         p.pose.position.x = 8  # posizione del check-point
         p.pose.position.y = 8
         p.pose.position.z = 0
+        q = quaternion_from_euler(0.0, 0.0, 0.0)
+        p.pose.orientation = Quaternion(*q)
+
 
 if __name__ == '__main__':
     try:
