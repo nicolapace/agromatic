@@ -38,3 +38,6 @@ rosrun sending_goals sending_goals.py
 -trying the gmapping and amcl to save a map and locate the robot
 -improving the sending_goals.py to implement the tracker for the timer and multiple goals (try with playpen)
 (also: draw a custom path in a pytohon program)
+
+
+- nel sending-goals timer controllare pperchp non legge i primi 2 goals e fare il nodo di lettura del goal reached
