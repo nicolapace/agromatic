@@ -19,11 +19,18 @@ def talker():
     pub = rospy.Publisher('move_base_simple/goal', PoseStamped, queue_size=10)   
     rospy.init_node('BASE_CLIENT_PY', anonymous=True)
     rate = rospy.Rate(0.1) # 10sec
+
+    t = random.randint(30,40)
+    print("tempo timer: " + str(t))
+
     while not rospy.is_shutdown():
         while flag==True:
-            t = random.randint(30,50)
+            
             t_ini = time.time()
+            print( "RICARICA")
             while time.time()-t_ini<t:
+                tempo_passato = time.time()-t_ini
+                print( "livello del contatore: " + str(tempo_passato))
                 p = PoseStamped()
 
                 p.pose.position.x = random.randint(0,5)  
@@ -35,20 +42,32 @@ def talker():
 
                 q = quaternion_from_euler(0.0, 0.0, 0.0)
                 p.pose.orientation = Quaternion(*q)
-
-                rospy.loginfo(p)
                 pub.publish(p)
+                #rospy.loginfo(p)
+                print("goal: "+ str(p.pose.position.x) + ", "  +str(p.pose.position.y))
                 rate.sleep()
+
+            p = PoseStamped()
             p.pose.position.x = 8  # posizione del check-point
             p.pose.position.y = 8
             p.pose.position.z = 0
+            p.header.frame_id="odom"
             q = quaternion_from_euler(0.0, 0.0, 0.0)
             p.pose.orientation = Quaternion(*q)
+            pub.publish(p)
+            #rospy.loginfo(p)
+            print("goal: "+ str(p.pose.position.x) + ", "  +str(p.pose.position.y))
+            rate.sleep()
+            
+        p = PoseStamped()
         p.pose.position.x = 8  # posizione del check-point
         p.pose.position.y = 8
         p.pose.position.z = 0
+        p.header.frame_id="odom"
         q = quaternion_from_euler(0.0, 0.0, 0.0)
         p.pose.orientation = Quaternion(*q)
+        #rospy.loginfo(p)
+        pub.publish(p)
 
 
 if __name__ == '__main__':
