@@ -25,8 +25,8 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 -->
 <launch>
 
-  <!-- <arg name="no_static_map" default="false"/> -->
-  <arg name="no_static_map" default="true"/> 
+  <arg name="no_static_map" default="false"/> 
+  <!--<arg name="no_static_map" default="true"/> -->
 
   <arg name="base_global_planner" default="navfn/NavfnROS"/>
   <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS"/>
