@@ -18,11 +18,11 @@ def talker():
     while not rospy.is_shutdown():
         p = PoseStamped()
             
-        p.pose.position.x = 3   
-        p.pose.position.y = 3
+        p.pose.position.x = 9  
+        p.pose.position.y = 5
         p.pose.position.z = 0
 
-        p.header.frame_id="odom"
+        p.header.frame_id="map"
         
         q = quaternion_from_euler(0.0, 0.0, 0.0)
         p.pose.orientation = Quaternion(*q)
