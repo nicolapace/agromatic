@@ -34,7 +34,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   <arg name="map_file" default="$(find sending_goals)/map/map.yaml"/> 
   <arg name="initial_pose_x" default="7.0"/> 
   <arg name="initial_pose_y" default="4.0"/> 
-  <arg name="initial_pose_a" default="0.0"/>
+  <arg name="initial_pose_a" default="-1.57"/>
 
 
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" /> 

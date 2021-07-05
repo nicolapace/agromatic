@@ -4,7 +4,7 @@
     <arg name="x" default="7.0"/>
     <arg name="y" default="4.0"/>
     <arg name="z" default="0.0"/>
-    <arg name="yaw" default="0.0" />
+    <arg name="yaw" default="-1.57" />
     <arg name="use_sim_time" default="true" />
     <arg name="gui" default="true" />
     <arg name="headless" default="false" />
