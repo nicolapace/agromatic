@@ -26,7 +26,7 @@ class Sending_goal():
         self._status = GoalStatus()
         self._status_sub = rospy.Subscriber('/move_base/status', GoalStatusArray , self.sub_callback)
         self.pub = rospy.Publisher('move_base_simple/goal', PoseStamped, queue_size=10)
-        self.t = random.randint(30,30)
+        self.t = random.randint(120,120)
         print("Tempo timer: " + str(self.t))
         self.t_ini = time.time() 
         self.talker()
@@ -47,6 +47,7 @@ class Sending_goal():
         self.pub.publish(p)
 
     def contr_timer(self,pose):
+        print("tempo passato "+ str(time.time()-self.t_ini))
         if time.time()-self.t_ini>self.t:
             p = PoseStamped()
             p.pose.position.x = -7  # posizione del check-point
@@ -61,13 +62,15 @@ class Sending_goal():
                 rospy.sleep(1.)
                 print("Ritorno...")
           
-        #recupero il goal che avevo sospeso
-        self.setPose(pose)
-        while self._status.status != 3:
-                    print(str(self._status.text))
-                    rospy.sleep(1.)
-        self.t = random.randint(30,30)
-        self.t_ini = time.time()
+            #recupero il goal che avevo sospeso
+            self.setPose(pose)
+            print("x: " + str(pose['posizione']['x']) + ", y: "+ str(pose['posizione']['y']))
+            rospy.sleep(1.)
+            while self._status.status != 3:
+                        print(str(self._status.text))
+                        rospy.sleep(1.)
+            self.t = random.randint(120,120)
+            self.t_ini = time.time()
 
 
     def finalpose(self):
@@ -80,6 +83,9 @@ class Sending_goal():
         p.pose.orientation = Quaternion(*q)
         self.pub.publish(p)
         print("FINITO: RITORNO ALLA BASE")
+        while self._status.status != 3:
+            rospy.sleep(1.)
+            print("Ritorno...")
 
     #callback dello status 
     def sub_callback(self, msg):
@@ -108,7 +114,8 @@ class Sending_goal():
                 self.setPose(pose)
                 print(self._status.text)
                 while self._status.status != 3:
-                    print(str(self._status.text))
+                    self.contr_timer(pose) 
+                    print(self._status.text)
                     rospy.sleep(1.)
             else:
                 print("Goal numero: "+str(i))
