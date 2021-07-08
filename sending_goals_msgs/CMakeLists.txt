@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(sending_goals)
+project(sending_goals_msgs)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -106,8 +106,8 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
- INCLUDE_DIRS src msg
- LIBRARIES sending_goals
+ INCLUDE_DIRS msg
+ LIBRARIES sending_goals_msgs
  CATKIN_DEPENDS actionlib move_base_msgs rospy message_runtime
 # DEPENDS system_lib
 )

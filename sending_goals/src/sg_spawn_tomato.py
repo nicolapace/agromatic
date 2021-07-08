@@ -103,7 +103,7 @@ class Sending_goal():
         # print("il valore è: "+str(self._status)) 
 
     def talker(self):
-        file = open(str(expanduser("~"))+'/catkin_ws/src/agromatic/sending_goals/pose/poses.json',)
+        file = open(str(expanduser("~"))+'/catkin_ws/src/sending_goals/pose/poses.json',)
         poses_list = json.load(file)
         i = 0
         for pose in poses_list:
@@ -127,17 +127,23 @@ class Sending_goal():
                 if self._status.status == 3: #goal reached
                     self.setPose(pose)
                     print("x: " + str(pose['posizione']['x']) + ", y: "+ str(pose['posizione']['y']))
-                    spawn_model_client = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
-                    # self.object_coordinates = self.model_coordinates("husky", "")
-                    # y = self.object_coordinates.pose.position.y
-                    # x = self.object_coordinates.pose.position.x
-                    spawn_model_client('Fruit1', open("/home/francesco/.gazebo/models/tomato_0/Fruit1.sdf",'r').read(), "/", Pose(position = p.pose.position.x,p.pose.position.y,p.pose.position.z, orientation = p.pose.orientation.x,p.pose.orientation.y,p.pose.orientation.z,p.pose.orientation.w),"world")
                     rospy.sleep(1.)
                     while self._status.status != 3:
                         self.contr_timer(pose) # Quando il timer scade viene inviata la posizione del 
                         # check-point e in seguito rinviato all'ultima posa raggiunta
                         print(self._status.text)
                         rospy.sleep(1.)
+                    spawn_model_client = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+                    # self.object_coordinates = self.model_coordinates("husky", "")
+                    # y = self.object_coordinates.pose.position.y
+                    # x = self.object_coordinates.pose.position.x
+                    posa = Pose()
+                    posa.position.x = -0.1
+                    posa.position.y = 0
+                    posa.position.z = 1
+                    posa.orientation = Quaternion(*quaternion_from_euler(0.0, 0.0, 0.0))
+                    spawn_model_client('Fruit'+str(i), open(str(expanduser("~"))+"/.gazebo/models/tomato_fruit/model.sdf",'r').read(), "/foo", posa ,"base_link")
+                   
                 # else:
                 #     while self._status.status != 3:
                 #         print(str(self._status.text))

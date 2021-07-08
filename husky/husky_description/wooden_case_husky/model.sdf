@@ -1,0 +1,250 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+  <model name="wooden_case_husky">
+    <link name="base">
+     
+      <pose>0 0 0.024  0 0 0</pose>
+      <inertial>
+        <pose>-0.02218446808213116 0.0 0.17159249678128843  0 0 0</pose>
+        <mass>3.9626366887499986</mass>
+        <inertia>
+          <ixx>0.2135364168029657</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0007793770806417083</ixz>
+          <iyy>0.07089428398599372</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.15460392299497075</izz>
+        </inertia>
+      </inertial>
+      
+      <collision name='collision_back'>
+        <pose>-0.053975 0 0.17779999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.019049999999999997 0.5460999999999999 0.3175</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <!-- Red Pine coefficients for longitudinal axis of the wood
+                 according to:
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
+            <poissons_ratio>0.347</poissons_ratio>
+            <elastic_modulus>8.8e+09</elastic_modulus>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>100.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <torsional>
+              <coefficient>1.0</coefficient>
+              <use_patch_radius>0</use_patch_radius>
+              <surface_radius>0.01</surface_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='visual_back'>
+        <pose>-0.053975 0 0.17779999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.019049999999999997 0.5460999999999999 0.3175</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name='collision_bottom'>
+        <pose>0 0 0.009524999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <!-- Red Pine coefficients for longitudinal axis of the wood
+                 according to:
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
+            <poissons_ratio>0.347</poissons_ratio>
+            <elastic_modulus>8.8e+09</elastic_modulus>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>100.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <torsional>
+              <coefficient>1.0</coefficient>
+              <use_patch_radius>0</use_patch_radius>
+              <surface_radius>0.01</surface_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='visual_bottom'>
+        <pose>0 0 0.009524999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name='collision_top'>
+        <pose>0 0 0.34607499999999997  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <!-- Red Pine coefficients for longitudinal axis of the wood
+                 according to:
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
+            <poissons_ratio>0.347</poissons_ratio>
+            <elastic_modulus>8.8e+09</elastic_modulus>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>100.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <torsional>
+              <coefficient>1.0</coefficient>
+              <use_patch_radius>0</use_patch_radius>
+              <surface_radius>0.01</surface_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='visual_top'>
+        <pose>0 0 0.34607499999999997  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.5841999999999999 0.019049999999999997</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name='collision_left'>
+        <pose>0 -0.28257499999999997 0.17779999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.019049999999999997 0.3175</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <!-- Red Pine coefficients for longitudinal axis of the wood
+                 according to:
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
+            <poissons_ratio>0.347</poissons_ratio>
+            <elastic_modulus>8.8e+09</elastic_modulus>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>100.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <torsional>
+              <coefficient>1.0</coefficient>
+              <use_patch_radius>0</use_patch_radius>
+              <surface_radius>0.01</surface_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='visual_left'>
+        <pose>0 -0.28257499999999997 0.17779999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.019049999999999997 0.3175</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name='collision_right'>
+        <pose>0 0.28257499999999997 0.17779999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.019049999999999997 0.3175</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <!-- Red Pine coefficients for longitudinal axis of the wood
+                 according to:
+                 http://www.fpl.fs.fed.us/documnts/fplgtr/fplgtr113/ch04.pdf -->
+            <poissons_ratio>0.347</poissons_ratio>
+            <elastic_modulus>8.8e+09</elastic_modulus>
+            <ode>
+              <kp>100000</kp>
+              <kd>100</kd>
+              <max_vel>100.0</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <torsional>
+              <coefficient>1.0</coefficient>
+              <use_patch_radius>0</use_patch_radius>
+              <surface_radius>0.01</surface_radius>
+            </torsional>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='visual_right'>
+        <pose>0 0.28257499999999997 0.17779999999999999  0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.127 0.019049999999999997 0.3175</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+      
+      
+    </link>
+
+  </model>
+</sdf>
