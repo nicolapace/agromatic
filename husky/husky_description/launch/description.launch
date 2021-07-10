@@ -30,11 +30,17 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
   <arg name="realsense_enabled" default="$(optenv HUSKY_REALSENSE_ENABLED false)"/>
   <arg name="urdf_extras" default="$(optenv HUSKY_URDF_EXTRAS)"/>
 
-  <param name="robot_description" command="$(find xacro)/xacro '$(find husky_description)/urdf/husky.urdf.xacro'
+  <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find husky_description)/urdf/husky.urdf.xacro'
     robot_namespace:=$(arg robot_namespace)
     laser_enabled:=$(arg laser_enabled)
     realsense_enabled:=$(arg realsense_enabled)
     urdf_extras:=$(arg urdf_extras)
-    " />
+    " /> -->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find husky_custom_description)/urdf/custom_description.urdf.xacro'
+    robot_namespace:=$(arg robot_namespace)
+    laser_enabled:=$(arg laser_enabled)
+    realsense_enabled:=$(arg realsense_enabled)
+    urdf_extras:=$(arg urdf_extras)
+    " /> 
 
 </launch>
