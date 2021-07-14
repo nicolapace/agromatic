@@ -26,7 +26,7 @@ class SavePoses(object):
             
         i = 0
        
-        with open(str(expanduser("~"))+'/catkin_ws/src/sending_goals/pose/poses.json', 'w') as json_file:
+        with open(str(expanduser("~"))+'/catkin_ws/src/agromatic/sending_goals/pose/poses.json', 'w') as json_file:
             
             while(1):
                 i+=1

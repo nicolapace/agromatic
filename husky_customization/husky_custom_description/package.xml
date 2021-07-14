@@ -6,7 +6,7 @@
 
   <license>BSD</license>
 
-  <maintainer email="pbovbel@clearpathrobotics.com">Paul Bovbel</maintainer>
+  <maintainer email="pbovbel@clearpathrobotics.com">  Paul Bovbel</maintainer>
 
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>husky_description</run_depend>

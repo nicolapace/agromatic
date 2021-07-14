@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>agromatic_gazebo</name>
+  <version>0.0.0</version>
+  <description>The agromatic_gazebo package</description>
+
+   <license>BSD</license>
+
+  <maintainer email="nicola.pace97@gmail.com"> Nicola Pace</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>list</exec_depend>
+
+  <export>
+  </export>
+</package>

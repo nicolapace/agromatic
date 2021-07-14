@@ -13,8 +13,8 @@ from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal, MoveBaseActionResul
 from geometry_msgs.msg import Pose, PoseStamped, PoseArray, Quaternion, Point
 from tf.transformations import quaternion_from_euler
 from actionlib_msgs.msg import GoalStatusArray, GoalStatus
-from gazebo_msgs.srv import DeleteModel, SpawnModel
-from gazebo_msgs.srv import GetModelState
+from gazebo_msgs.srv import DeleteModel, SpawnModel, GetModelState
+from sending_goals_msgs.msg import Weight
 #json
 import json
 from os.path import expanduser
@@ -34,6 +34,10 @@ class Sending_goal():
 
         self.spawn_model_client = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
         self.delete_model = rospy.ServiceProxy("gazebo/delete_model", DeleteModel)
+
+        # self._counterData = Counter()
+        # self._counter_sub = rospy.Subscriber('counter', Counter , self.sub_counter_callback)
+        # self._counter_pub = rospy.Publisher('counter_reset', Counter, queue_size=10)
 
         self.nFruits = 0
         self.talker()
@@ -137,7 +141,7 @@ class Sending_goal():
             self._status  = msg.status_list[len(msg.status_list)-1]
 
     def talker(self):
-        file = open(str(expanduser("~"))+'/catkin_ws/src/sending_goals/pose/poses.json',)
+        file = open(str(expanduser("~"))+'/catkin_ws/src/agromatic/sending_goals/pose/poses.json',)
         poses_list = json.load(file)
         i = 0
         for pose in poses_list:

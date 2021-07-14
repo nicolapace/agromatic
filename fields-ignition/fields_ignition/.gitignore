@@ -1,6 +1,0 @@
-*.log.ipynb 
-*.pyc
-.ipynb_checkpoints
-__pycache__
-generated
-trials

@@ -1,0 +1,170 @@
+material tomato/frt1
+{
+	technique
+	{
+		pass
+		{
+			diffuse 1.0 1.0 1.0 1.0 
+			texture_unit
+			{
+				texture ../textures/AG15frt1.png
+			}
+		}
+	}
+}
+
+material tomato/frt2
+{
+	technique
+	{
+		pass
+		{
+			diffuse 1.0 1.0 1.0 1.0
+			texture_unit
+			{
+				texture ../textures/AG15frt2.png
+			}
+		}
+	}
+}
+
+material tomato/frt3
+{
+	technique
+	{
+		pass
+		{
+		
+			diffuse 1.0 1.0 1.0 1.0
+			texture_unit
+			{
+				texture ../textures/AG15frt3.png
+			}
+		}
+	}
+}
+
+material tomato/frt4
+{
+	technique
+	{
+		pass
+		{
+		
+			diffuse 1.0 1.0 1.0 1.0 
+			texture_unit
+			{
+				texture ../textures/AG15frt4.png
+			}
+		}
+	}
+}
+
+material tomato/blo1
+{
+	technique
+	{
+		pass
+		{
+			diffuse 1.0 1.0 1.0 1.0 
+			texture_unit
+			{
+				texture ../textures/AG15blo1.png
+			}
+		}
+	}
+}
+
+material tomato/blo2
+{
+	technique
+	{
+		pass
+		{
+			diffuse 1.0 1.0 1.0 1.0 
+			texture_unit
+			{
+				texture ../textures/AG15blo2.png
+			}
+		}
+	}
+}
+
+material tomato/blo3
+{
+	technique
+	{
+		pass
+		{
+		
+			diffuse 1.0 1.0 1.0 1.0 
+			texture_unit
+			{
+				texture ../textures/AG15blo3.png
+			}
+		}
+	}
+}
+
+material tomato/brn1
+{
+	technique
+	{
+		pass
+		{
+		
+			diffuse 1.0 1.0 1.0 1.0 
+			texture_unit
+			{
+				texture ../textures/AG15brn1.png
+			}
+		}
+	}
+}
+
+
+material tomato/lef1
+{
+	technique
+	{
+		pass
+		{
+			diffuse 1.0 1.0 1.0 1.0 
+			texture_unit
+			{
+				texture ../textures/AG15lef1.png
+			}
+		}
+	}
+}
+
+material tomato/lef2
+{
+	technique
+	{
+		pass
+		{
+			diffuse 1.0 1.0 1.0 1.0 
+			texture_unit
+			{
+				texture ../textures/AG15lef2.png
+			}
+		}
+	}
+}
+
+material tomato/lef3
+{
+	technique
+	{
+		pass
+		{
+		
+			diffuse 1.0 1.0 1.0 1.0 
+			texture_unit
+			{
+				texture ../textures/AG15lef3.png
+			}
+		}
+	}
+}

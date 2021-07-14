@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+<model name="tomato_fruit">
+    <static>true</static>
+    <link name="link">
+ <!--   <collision name="collision">
+	<geometry>
+	  <mesh>
+	    <uri>model://tomato_fruit/meshes/tomato.dae</uri>
+	  </mesh>
+	</geometry>
+    </collision> -->
+        <visual name="tomato_fruit_1">
+            <geometry>
+            <mesh>
+                <uri>model://tomato_fruit/meshes/tomato.dae</uri>
+                <submesh>
+                <name>Fruit1</name>
+                </submesh>
+            </mesh>
+            </geometry>
+            <material>
+                <script>
+                    <uri>model://tomato_fruit/materials/scripts</uri>
+                    <uri>model://tomato_fruit/materials/textures</uri>
+                    <name>tomato_fruit/frt1</name>
+                </script>
+            </material>
+        </visual>
+    </link>
+  </model>
+</sdf>

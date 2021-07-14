@@ -1,0 +1,16 @@
+material tomato_fruit/frt1
+{
+	technique
+	{
+		pass
+		{
+			diffuse 1.0 1.0 1.0 1.0 
+			texture_unit
+			{
+				texture ../textures/AG15frt1.png
+			}
+		}
+	}
+}
+
+		

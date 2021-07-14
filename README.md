@@ -1,13 +1,15 @@
 # Agromatic
 ## _An agro-matic robot_
 
+First, put the content of the folder /models inside in your /.gazebo hidden folder in your /home 
+
 Use
 -
 To run map+husky, run:
 -
 
 ```sh
-roslaunch cpr_agriculture_gazebo prova_mia.launch
+roslaunch agromatic_gazebo husky_sim.launch
 ```
 
 To run _Rviz_, run :
@@ -30,7 +32,7 @@ roslaunch husky_navigation gmapping_demo.launch
 -To run the custom python node for sending goals: 
 -
 ```sh
-rosrun sending_goals sending_goals.py
+rosrun sending_goals sg_spawn_tomato.py
 ```
 
 ## Todo
