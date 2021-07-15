@@ -43,3 +43,5 @@ rosrun sending_goals sg_spawn_tomato.py
 
 
 - nel sending-goals timer controllare pperchp non legge i primi 2 goals e fare il nodo di lettura del goal reached
+
+-vedere i parametri del dwa planner

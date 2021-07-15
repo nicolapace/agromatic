@@ -30,7 +30,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 
   <arg name="base_global_planner" default="navfn/NavfnROS"/>
   <arg name="base_local_planner" default="teb_local_planner/TebLocalPlannerROS"/>
-    <rosparam file="$(find husky_navigation)/config/planner2.yaml" command="load" />
+    <rosparam file="$(find husky_navigation)/config/planner_teb.yaml" command="load" />
   <!-- <arg name="base_local_planner" default="base_local_planner/TrajectoryPlannerROS"/> -->
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">

@@ -28,7 +28,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
     <!-- <param name="base_global_planner" value="$(arg base_global_planner)"/> -->
     <!-- <param name="base_local_planner" value="$(arg base_local_planner)"/>   -->
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
-    <rosparam file="$(find husky_navigation)/config/planner2.yaml" command="load" />
+    <rosparam file="$(find husky_navigation)/config/planner_teb.yaml" command="load" />
 
     <!-- observation sources located in costmap_common.yaml -->
     <rosparam file="$(find husky_navigation)/config/costmap_common.yaml" command="load" ns="global_costmap" />
