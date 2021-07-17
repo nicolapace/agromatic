@@ -10,6 +10,7 @@
     <arg name="headless" default="false" />
     
     <arg name="world_name" default="$(find agromatic_gazebo)/worlds/mondo_dynamic.world" />
+    <!-- <arg name="world_name" default="$(find agromatic_gazebo)/worlds/actor_collisions.world" /> -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
       <arg name="paused" value="false"/>
       <arg name="use_sim_time" value="true"/>

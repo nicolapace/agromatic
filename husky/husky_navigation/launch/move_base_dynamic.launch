@@ -41,7 +41,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 
     <!-- static global costmap, static map provides size -->
     <rosparam file="$(find husky_navigation)/config/costmap_global_static.yaml" command="load" ns="global_costmap"/>
-    <rosparam file="$(find husky_navigation)/config/planner2.yaml" command="load" />
+    <rosparam file="$(find husky_navigation)/config/planner_teb.yaml" command="load" />
     <!-- global costmap with laser, for odom_navigation_demo -->
     
   </node>

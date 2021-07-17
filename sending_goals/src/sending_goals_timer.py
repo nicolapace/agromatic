@@ -100,7 +100,7 @@ class Sending_goal():
         # print("il valore è: "+str(self._status)) 
 
     def talker(self):
-        file = open(str(expanduser("~"))+'/catkin_ws/src/sending_goals/pose/poses.json',)
+        file = open(str(expanduser("~"))+'/catkin_ws/src/agromatic/sending_goals/pose/poses.json',)
         poses_list = json.load(file)
         i = 0
         for pose in poses_list:
