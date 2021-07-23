@@ -1,0 +1,34 @@
+<launch>
+   
+    <arg name="platform" default="$(optenv CPR_GAZEBO_PLATFORM husky)" />
+    <arg name="x" default="7.0"/>
+    <arg name="y" default="4.0"/>
+    <arg name="z" default="0.0"/>
+    <arg name="yaw" default="-1.57" />
+    <arg name="use_sim_time" default="true" />
+    <arg name="gui" default="true" />
+    <arg name="headless" default="false" />
+    
+    <arg name="world_name" default="$(find agromatic_gazebo)/worlds/mondo_campo_water_tank.world" />
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <arg name="paused" value="false"/>
+      <arg name="use_sim_time" value="true"/>
+      <arg name="gui" value="true"/>
+      <arg name="headless" value="false"/>
+      <arg name="debug" value="false"/>
+      <arg name="world_name" value="$(arg world_name)" />
+    </include>
+
+
+    <arg name="laser_enabled" default="true"/>
+    <arg name="realsense_enabled" default="false"/>
+
+    <include file="$(find husky_gazebo)/launch/spawn_husky_water_tank.launch">
+      <arg name="x" value="$(arg x)"/>
+      <arg name="y" value="$(arg y)"/>
+      <arg name="z" value="$(arg z)"/>
+      <arg name="yaw" value="$(arg yaw)"/>
+      <arg name="laser_enabled" value="$(arg laser_enabled)"/>
+      <arg name="realsense_enabled" value="$(arg realsense_enabled)"/>
+    </include>  
+</launch>
