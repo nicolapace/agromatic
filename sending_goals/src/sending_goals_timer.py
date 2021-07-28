@@ -105,13 +105,15 @@ class Sending_goal():
         i = 0
         for pose in poses_list:
             if i==0:
-                print("Goal numero: "+str(i))
-                print("x: " + str(pose['posizione']['x']) + ", y: "+ str(pose['posizione']['y']))
+                # print("Goal numero: "+str(i))
+                # print("x: " + str(pose['posizione']['x']) + ", y: "+ str(pose['posizione']['y']))
                 self.setPose(pose)
                 print(self._status.text)
             elif i==1:
                 print("Goal numero: "+str(i))
                 print("x: " + str(pose['posizione']['x']) + ", y: "+ str(pose['posizione']['y']))
+                self.setPose(pose)
+                rospy.sleep(1.)
                 self.setPose(pose)
                 print(self._status.text)
                 while self._status.status != 3:

@@ -54,7 +54,7 @@ class Sending_goal():
         p.pose.orientation.x = pose['orientamento']['x']
         p.pose.orientation.y = pose['orientamento']['y']
         p.pose.orientation.z = pose['orientamento']['z']
-        
+
         self.pub.publish(p)
 
     def svuota_cassetta(self,i):
@@ -100,7 +100,7 @@ class Sending_goal():
                         print(str(self._status.text))
                         rospy.sleep(1.)
                         self.spawn_fruits(1)
-            
+
 
 
     def finalpose(self):
@@ -133,9 +133,9 @@ class Sending_goal():
                                     posa ,
                                     "base_link")
         self.nFruits+=n_fruits
-                   
 
-    #callback dello status 
+
+    #callback dello status
     def sub_callback(self, msg):
         if(len(msg.status_list)>0):
             self._status  = msg.status_list[len(msg.status_list)-1]
@@ -146,11 +146,11 @@ class Sending_goal():
         i = 0
         for pose in poses_list:
             if i==0:
-                print("Goal numero: "+str(i))
-                print("x: " + str(pose['posizione']['x']) + ", y: "+ str(pose['posizione']['y']))
+                # print("Goal numero: "+str(i))
+                # print("x: " + str(pose['posizione']['x']) + ", y: "+ str(pose['posizione']['y']))
                 self.setPose(pose)
                 print(self._status.text)
-                
+
             elif i==1:
                 print("Goal numero: "+str(i))
                 print("x: " + str(pose['posizione']['x']) + ", y: "+ str(pose['posizione']['y']))
@@ -159,12 +159,12 @@ class Sending_goal():
                 self.setPose(pose)
                 print(self._status.text)
                 while self._status.status != 3:
-                    self.contr_timer(pose,i) 
+                    self.contr_timer(pose,i)
                     print(self._status.text)
                     rospy.sleep(1.)
                     self.spawn_fruits(1)
                 self.spawn_fruits(6)
-               
+
             else:
                 print("Goal numero: "+str(i))
                 print(self._status.text)
@@ -173,19 +173,19 @@ class Sending_goal():
                     print("x: " + str(pose['posizione']['x']) + ", y: "+ str(pose['posizione']['y']))
                     rospy.sleep(1.)
                     while self._status.status != 3:
-                        self.contr_timer(pose,i) # Quando il timer scade viene inviata la posizione del 
+                        self.contr_timer(pose,i) # Quando il timer scade viene inviata la posizione del
                         # check-point e in seguito rinviato all'ultima posa raggiunta
                         print(self._status.text)
                         rospy.sleep(1.)
                         self.spawn_fruits(1)
                     self.spawn_fruits(6)
-            i+=1 
+            i+=1
             self._rate.sleep()
 
         self.finalpose()
 
-        
+
 
 if __name__ == '__main__':
-    rospy.init_node('sending_goals', anonymous=True) 
+    rospy.init_node('sending_goals', anonymous=True)
     prova = Sending_goal()
