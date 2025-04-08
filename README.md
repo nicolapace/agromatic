@@ -41,7 +41,7 @@ or
 roslaunch husky_navigation gmapping_demo.launch
 ```
 
-To run the custom python node for sending goals
+To execute the custom python node for sending goals, run
 -
 
 ```sh
